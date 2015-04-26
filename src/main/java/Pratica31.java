@@ -1,5 +1,4 @@
-import static java.lang.Character.toUpperCase;
-import java.util.Calendar;
+
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -14,47 +13,31 @@ import java.util.GregorianCalendar;
  * @author Marcos
  */
 public class Pratica31 {
-    
-    private static String meuNome;
-    private static Date inicio;
-    private static Date fim;
-    private static  GregorianCalendar dataNascimento;
+    private static String meuNome = "Marcos Thölken";
+    private static GregorianCalendar dataNascimento = new GregorianCalendar(1995, 7, 23);
+    private static Date inicio, fim;
     
     public static void main(String[] args) {
-        meuNome = "mArCOs tHöLKen";
-        
         inicio = new Date();
         
-        String maisculo = meuNome.toUpperCase();
+        System.out.println(meuNome.toUpperCase());
         
-        String sobrenome;        
-        char inicialNome;
-        char inicialSobrenome;
+        String nomeFormatado;
         
-        meuNome = meuNome.toUpperCase();
-        System.out.println(meuNome);
+        nomeFormatado = meuNome.substring(6, 7).toUpperCase() +
+                meuNome.substring(7, 14).toLowerCase() + ", "
+                + meuNome.substring(0, 1).toUpperCase() + ". ";
         
-        sobrenome = meuNome.substring(8);
-        sobrenome = sobrenome.toLowerCase();
-        inicialSobrenome = meuNome.charAt(7);
-        inicialSobrenome = toUpperCase(inicialSobrenome);
-        inicialNome = meuNome.charAt(0);
-        inicialNome = toUpperCase(inicialNome);
+        System.out.println(nomeFormatado + "\n");
         
-        System.out.println(inicialSobrenome + sobrenome + ", " + inicialNome + ".");
-               
-        Calendar dataAtual = Calendar.getInstance();
-        
-        dataNascimento = new GregorianCalendar(1994, 9, 14);
-        long dif = dataAtual.getTimeInMillis() - dataNascimento.getTimeInMillis();
-        
-        dif = dif/1000/60/60/24;
-        
-        System.out.println("Tempo total em dias: " + dif);
+        System.out.println((inicio.getTime() - dataNascimento.getTimeInMillis())
+        %(1000*3600*24));
         
         fim = new Date();
         
-        long tempo = fim.getTime() - inicio.getTime();
-        System.out.println(tempo + "ms");
+        long ms = fim.getTime() - inicio.getTime();
+        
+        System.out.println(ms);
+        
     }
 }
