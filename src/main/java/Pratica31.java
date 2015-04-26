@@ -24,7 +24,7 @@ public class Pratica31 {
         
         String nomeFormatado;
         
-        nomeFormatado = meuNome.substring(6, 7).toUpperCase() +
+        nomeFormatado = meuNome.substring(7, 8).toUpperCase() +
                 meuNome.substring(7, 14).toLowerCase() + ", "
                 + meuNome.substring(0, 1).toUpperCase() + ". ";
         
